@@ -1,8 +1,12 @@
 import Vue from 'vue'
-import App from './App.vue'
+import App from './App'
+import myPlugin from './plugin.js'
 
-Vue.config.productionTip = false
+Vue.use(myPlugin, {
+    job: 'Web Dev'
+})
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+    el: '#app',
+    render: h => h(App)
+})
